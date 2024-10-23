@@ -13,6 +13,7 @@ app.use(express.json()); // To parse JSON request bodies
 
 // Routes
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/tasks", require("./routes/tasks"));
 
 // Database Connection
 connectDB();
