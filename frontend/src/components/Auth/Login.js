@@ -19,11 +19,10 @@ const Login = () => {
     e.preventDefault();
     try {
       const successful = await login(email, password);
-      if (successful === true) {
-        // Check if login was successful
+      if (successful) {
         navigate("/");
       } else {
-        alert(successful); // Display the error message in an alert
+        alert("Invalid credentials");
       }
     } catch (err) {
       console.error(err);

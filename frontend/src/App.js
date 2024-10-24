@@ -12,6 +12,7 @@ import Login from "./components/Auth/Login";
 import TaskList from "./components/Tasks/TaskList";
 import TaskForm from "./components/Tasks/TaskForm";
 import TaskDetails from "./components/Tasks/TaskDetails";
+import Navbar from "./components/Navbar";
 
 function App() {
   const { isAuthenticated, loading } = useContext(AuthContext);
@@ -23,6 +24,7 @@ function App() {
   return (
     <Router>
       <div className="container mt-5">
+        <Navbar />
         <Routes>
           <Route
             path="/login"

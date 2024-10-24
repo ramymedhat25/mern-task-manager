@@ -24,11 +24,11 @@ const Register = () => {
     } else {
       try {
         const successful = await register(name, email, password);
-        if (successful === true) {
-          // Check if registration was successful
+        if (successful) {
           navigate("/login");
+          alert("Registration successful!");
         } else {
-          alert(successful); // Display the error message in an alert
+          alert("Registration failed. Please try again.");
         }
       } catch (err) {
         console.error(err.response.data);
