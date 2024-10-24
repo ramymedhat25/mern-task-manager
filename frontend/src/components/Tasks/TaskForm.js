@@ -4,7 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../../AuthContext";
 
 const TaskForm = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const navigate = useNavigate();
   const { logout } = useContext(AuthContext);
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ const TaskForm = () => {
         // Only fetch task if in edit mode (id exists)
         try {
           setLoading(true);
-          const res = await axios.get(`/api/tasks/${id}`);
+          const res = await axios.get(`http://localhost:8000/api/tasks/${id}`);
           setFormData({
             title: res.data.title,
             description: res.data.description,
@@ -66,9 +66,9 @@ const TaskForm = () => {
 
   return (
     <div className="mt-5">
-      <button className="btn btn-danger mb-3" onClick={handleLogout}>
+      {/* <button className="btn btn-danger mb-3" onClick={handleLogout}>
         Logout
-      </button>
+      </button> */}
       <h1 className="mb-4">{id ? "Edit Task" : "Add Task"}</h1>{" "}
       {/* Dynamic heading */}
       {loading ? (

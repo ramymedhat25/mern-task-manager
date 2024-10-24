@@ -48,6 +48,7 @@ function App() {
             }
           />
           <Route path="/tasks/:id" element={<TaskDetails />} />
+          <Route path="/tasks/:id/edit" element={<TaskForm />} />
         </Routes>
       </div>
     </Router>
