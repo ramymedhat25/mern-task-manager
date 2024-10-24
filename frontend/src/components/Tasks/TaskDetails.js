@@ -11,7 +11,7 @@ const TaskDetails = () => {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const res = await axios.get(`/api/tasks/${id}`);
+        const res = await axios.get(`http://localhost:8000/api/tasks/${id}`);
         setTask(res.data);
       } catch (err) {
         console.error(err);
@@ -25,7 +25,7 @@ const TaskDetails = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/tasks/${id}`);
+      await axios.delete(`http://localhost:8000/api/tasks/${id}`);
       navigate("/"); // Redirect to task list after deletion
     } catch (err) {
       console.error(err);
